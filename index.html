@@ -15,10 +15,9 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
 -->
 <html lang="en">
     <head>
-    <!-- EXERCISE 1:
-    Specify the title, the charset (UTF-8) and the viewport of the page.
-    -->
     <title>Strive Barber Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
 
@@ -30,60 +29,187 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
        Set a ok-ish color when the input of the forms are valid
     */
 
+    h1 {
+        color: rgb(239, 61, 89);
+        text-align: center;
+    }
+
+    h2{
+        color: white;
+        text-align: center;
+    }
+
+    body{
+        background-color: #181818;
+        
+    }
+
+    html, body{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .container{
+        width: 700px;
+        margin: 0 auto;
+    }
+
+
+    nav {
+        background: white;
+        /* line-height: 50px; */
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+
+    nav img {
+        height:40px;
+        width: 40px;
+    }
+
+    #maintitle{
+        padding-top:50px;
+        padding-bottom: 50px;
+    }
+
+    #promo{
+        background: white;
+        color: rgb(239, 61, 89);
+        border: 2px solid rgb(239, 61, 89);
+        padding: 50px;
+        text-align: center;
+    }
+
+   #address{
+       display: flex;
+       justify-content: center;
+       margin-top:20px;
+       margin-bottom: 20px;
+   }
+
+   #leaveEmail {
+       display:flex;
+       justify-content: center;
+   }
+
+   #leaveEmail input{
+       background: white;
+       color: rgb(239, 61, 89);
+       padding: 20px;
+       border: 1px solid  rgb(239, 61, 89);
+   }
+
+   #bookhaircut{
+    display:flex;
+       justify-content: center;
+   }
+
+   p{
+       color:white;
+   }
+   section{
+       margin-bottom: 50px;
+   }
+
+   table {
+       width: 50%;
+       color: white;
+       margin: 0 auto;
+   }
+
+ 
+   td, th {
+       border: 1px solid white;
+   }
+
+   footer{
+       height: 40px;
+       line-break: 40px;
+       background-color:   rgb(239, 61, 89);
+       color: white;
+   }
+
+    input:valid{
+       border: 10px solid green;
+       color: red;
+   }
+
+   input:invalid{
+       border: 5px solid red;
+   } 
+
     </style>
 
     </head>
     <body>
-        <!-- EXERCISE 11
-        Add a navbar with the links to the sections
-        -->
+       
+        <nav>
+            <img src="LOGO.jpg" />
+            Strive
+        </nav>
 
-        <!-- EXERCISE 3:
-            Write the main title of the barber shop and a smaller claim.
-        -->
+        <div class="container">
 
-        <!-- EXERCISE 4: 
-            Write a section in which you explain a current promotion
-        -->
+            <section id="maintitle">
+                <h1>Strive Barber Shop</h1>
+                <h2>You'll Strive until your hairs fall</h2>
+            </section>
 
-        <!-- EXERCISE 5: 
-            Write a section with the address of the shop.
-            [OPTIONAL] Link this address to Google Maps page.
-        -->
+            <section id="promo">
+                <h1>Promo of the Week!</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </section>
 
-        <!-- EXERCISE 6: 
-            Write a "Leave Email" form. 
-            The form must have a field for the Email and a button for the submission of the field itself.
-            The field must accept ONLY valid emails (empty email is not a valid email).
+            <section id="address">
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23100.108163474142!2d12.503920147325084!3d41.847155497190386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma+RM!5e0!3m2!1sit!2sit!4v1561123788427!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </section>
 
-            [OPTIONAL] On submit click, console log the value of the email
-        -->
+            <section id="leaveEmail">
+                <form>
+                    <p>Hey, leave us your email, so that we can stay in contact!</p>
+                    <input type="email" id="email" placeholder="leave your email" onkeyup="validateField()">
+                    <input type="button" onclick="SaveEmail()" value="Subscribe" />
+                    <p id="errorMessage"> </p>
+                </form>
+            </section>
 
-        <!-- EXERCISE 7: 
-            Create an "book haircut" form.
-            The form must have:
-            - phone number
-            - date
-            - name
+            <section id="bookhaircut">
+                <h1>Book now your haircut!</h1>
+                <form>
+                    <input type="tel" placeholder="+12 1231233132" >
+                    <input type="date" placeholde="12/12/12" >
+                    <input type="email" required placeholder="your name" >
+                </form>                
+            </section>
 
-            Phone number and date are mandatory, the name is optional.
-            Create a form with a submit button, ready to be used in a real context.
-            Style it as you like it.
-            [OPTIONAL] On submit click, console log an object containing Phone Number, Date and Name.
-        -->
+            <section>
+                <h1>Check out our amazing prices!</h1>
+                <table>
+                    <tr>
+                        <th>Performance</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Simple Haircut</td>
+                        <td>200€</td>
+                    </tr>
+                    <tr>
+                        <td>Special Haircut</td>
+                        <td>2000€</td>
+                    </tr>
+                    <tr>
+                        <td>Lady Gaga Haircut</td>
+                        <td>20.000€</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
 
-
-          <!-- EXERCISE 8: 
-            Create a table with the price for the services of the barber shop
-        -->
-
-        <!-- EXERCISE 9: 
-            Place here a footer including:
-            - Name of the Barber Shop
-            - Address
-            - Phone Number
-            - Email (should be a clickable link)
-        -->
+        <footer>
+            Strive Barber Ltd, 123 Via Giolitti, Rome
+        </footer>
 
         <script>
             window.onload = function() {
@@ -94,6 +220,18 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
                     Write on console the size (height and width) of the current page window
                 */
             };
+
+            function validateField(){
+                var currentValue = event.target.value;
+                var errorMessage = document.getElementById("errorMessage");
+                errorMessage.innerHTML = currentValue.length <= 6 ?"The email must have at least 6 ch" : "";
+                // if (currentValue.length < 6){
+                //     errorMessage.innerHTML = "The email must have at least 6 ch";
+                // }
+                // else{
+                //     errorMessage.innerHTML = "";
+                // }
+            }
         </script>
     </body>
 </html>
